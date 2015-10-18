@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require 'jquery.jplayer'
+// = require jplayer.playlist.js
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .

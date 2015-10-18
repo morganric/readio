@@ -1,0 +1,104 @@
+
+
+
+<div class="row">
+  <div class="col-md-4">
+  <br/>
+    <%= image_tag @item.feed.image, width:'300' %>
+  </div>
+
+
+    <div class="col-md-8">
+<h1>
+  <%= @item.title %>
+  <br/>
+  <small>
+    by
+    <%= link_to @item.feed.title, @item.feed  %>
+  </small>
+
+</h1>
+
+<div id="jquery_jplayer_audio_1" class="jp-jplayer"></div>
+
+        <div id="jp_container_audio_1" class="jp-flat-audio" role="application" aria-label="media player">
+          <div class="jp-play-control jp-control">
+            <button class="jp-play jp-button" role="button" aria-label="play" tabindex="0"></button>
+          </div>
+          <div class="jp-bar">
+            <div class="jp-seek-bar jp-seek-bar-display"></div>
+            <div class="jp-seek-bar">
+              <div class="jp-play-bar"></div>
+              <div class="jp-details"><span class="jp-title" aria-label="title"></span></div>
+              <div class="jp-timing"><span class="jp-duration" role="timer" aria-label="duration"></span>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="jp-no-solution">
+            Media Player Error<br />
+            Update your browser or Flash plugin
+          </div>
+        </div>
+        <br/>
+
+<p class="well">
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Pub date:</strong>
+  <%= @item.pub_date %>
+</p>
+
+<p>
+  <strong>Plays:</strong>
+  <%= @item.plays %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
+
+</div></div>
+
+
+<script type="text/javascript">
+
+ $("#jquery_jplayer_audio_1").jPlayer({
+    ready: function(event) {
+      $(this).jPlayer("setMedia", {
+        title: "",
+        m4a: "<%= @item.url %>"
+      });
+    },
+    play: function() { // Avoid multiple jPlayers playing together.
+      $(this).jPlayer("pauseOthers");
+    },
+    timeFormat: {
+      padMin: false
+    },
+    swfPath: "js",
+    supplied: "m4a,oga",
+    cssSelectorAncestor: "#jp_container_audio_1",
+    useStateClassSkin: true,
+    autoBlur: false,
+    smoothPlayBar: true,
+    remainingDuration: true,
+    keyEnabled: true,
+    keyBindings: {
+      // Disable some of the default key controls
+      loop: null,
+      muted: null,
+      volumeUp: null,
+      volumeDown: null
+    },
+    wmode: "window",
+    ended: function() { // Avoid multiple jPlayers playing together.
+      $.ajax("/items/<%= @item.id %>/play")
+    }
+  });
+
+ </script>

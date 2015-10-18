@@ -1,0 +1,23 @@
+<%= simple_form_for(@feed) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :url %>
+    <%= f.input :title %>
+    <%= f.input :link %>
+    <%= f.input :pub_date %>
+    <%= f.input :description %>
+    <%= f.input :author %>
+    <%= f.input :language %>
+    <%= f.input :keywords %>
+    <%= f.input :owner_name %>
+    <%= f.input :owner_email %>
+    <%= f.input :category %>
+    <%= f.input :user_id %>
+    <%= f.input :slug %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
