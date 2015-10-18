@@ -18,7 +18,7 @@ class FeedsController < ApplicationController
 
     @items.each do |item|
 
-        if item.pubDate < @items.last.pubDate
+        if Date.parse(item.pubDate.strftime("%Y-%m-%d %I:%M%P")) > Date.parse(@items.last.pubDate.strftime("%Y-%m-%d %I:%M%P"))
 
           i = Item.new
           i.title = item.title
