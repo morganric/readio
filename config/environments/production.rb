@@ -1,3 +1,13 @@
+
+
+ENV["DOMAIN_NAME"] = "readioapp.xyz"
+ENV["ADMIN_NAME"] = "admin"
+ENV["ADMIN_EMAIL"] = "user@admin.com"
+ENV["ADMIN_PASSWORD"] = "changeme123"
+ENV["MANDRILL_USERNAME"] = 'morganric+artup@gmail.com'
+ENV["MANDRILL_APIKEY"] = 'M3G7MmfWxDBYTxnRArXrYg'
+
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
