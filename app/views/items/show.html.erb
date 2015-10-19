@@ -44,7 +44,7 @@
         <br/>
 
 <p class="well">
-  <%= sanitize @item.description %>
+  <%= strip_tags(@item.description) %>
 </p>
 
 <p>

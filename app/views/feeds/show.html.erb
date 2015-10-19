@@ -21,7 +21,7 @@
       <div class="well">
   
       <p>
-        <%=  sanitize @feed.description %>
+        <%=  strip_tags(@feed.description) %>
       </p>
 
 
