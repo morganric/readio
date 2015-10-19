@@ -28,7 +28,7 @@ class FeedsController < ApplicationController
           i.url = item.enclosure.url
           i.guid = item.guid
           i.author = item.author
-          
+          i.plays = rand(1..100)
           i.feed_id = @feed.id
 
           i.save
