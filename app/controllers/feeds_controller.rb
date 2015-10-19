@@ -37,6 +37,8 @@ class FeedsController < ApplicationController
 
       end
 
+      @items = @feed.items.page params[:page]
+
   end
 
   # GET /feeds/new

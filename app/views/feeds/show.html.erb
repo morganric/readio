@@ -21,7 +21,7 @@
       <div class="well">
   
       <p>
-        <%= @feed.description %>
+        <%=  sanitize @feed.description %>
       </p>
 
 
@@ -38,13 +38,16 @@
 
 
 
-      <% @feed.items.each do |item| %>
+      <% @items.each do |item| %>
          <li class="list-group-item"> <%= link_to item.title, item %> 
          
          </li>
       <% end %>
 
       </ul>
+
+       <%= paginate @items %>
+
     
   </div>
 
