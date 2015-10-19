@@ -7,6 +7,10 @@ class ItemsController < ApplicationController
     @items = Item.all.order('plays DESC').page params[:page]
   end
 
+   def latest
+    @items = Item.all.order('pub_date DESC').page params[:page]
+  end
+
   # GET /items/1
   # GET /items/1.json
   def show
