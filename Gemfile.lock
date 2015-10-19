@@ -317,6 +317,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jplayer-rails
   jquery-rails
+  kaminari
   launchy
   pg
   pundit
