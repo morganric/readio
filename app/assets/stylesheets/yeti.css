@@ -9,6 +9,10 @@ header {
 	margin-bottom: 60px;
 }
 
+h3 {
+	margin-top: 4px !important;
+}
+
 .jp-flat-audio {
   position: relative;
   font-family: 'Source Sans Pro', sans-serif;

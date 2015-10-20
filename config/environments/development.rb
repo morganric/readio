@@ -1,3 +1,7 @@
+ENV["MANDRILL_USERNAME"] = 'morganric+artup@gmail.com'
+ENV["MANDRILL_APIKEY"] = 'M3G7MmfWxDBYTxnRArXrYg'
+
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

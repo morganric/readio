@@ -47,20 +47,26 @@
   <%= strip_tags(@item.description) %>
 </p>
 
+
+  <label class='label label-info'><%= pluralize(@item.plays, 'play') %>
+</label>
+<br/><br/>
 <p>
-  <strong>Pub date:</strong>
+  <strong>Published on:</strong>
   <%= @item.pub_date %>
 </p>
 
-<p>
-  <strong>Plays:</strong>
-  <%= @item.plays %>
-</p>
 
 
+     <% if user_signed_in? %>
+              <% if current_user.try(:admin?) %>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+
+<%= link_to 'Edit', edit_item_path(@item) %> 
+
+          <% end %>
+        <% end %>
+
 
 </div></div>
 
@@ -76,6 +82,7 @@
     },
     play: function() { // Avoid multiple jPlayers playing together.
       $(this).jPlayer("pauseOthers");
+      console.log('play');
     },
     timeFormat: {
       padMin: false

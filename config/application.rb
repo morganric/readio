@@ -20,7 +20,7 @@ module Readio
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
-    config.assets.precompile += %w( yeti.css yeti.js)
+    config.assets.precompile += %w( yeti.css yeti.js )
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

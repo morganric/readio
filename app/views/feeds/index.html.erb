@@ -7,8 +7,12 @@
         <%= link_to image_tag(feed.image, class: 'img-thumbnail pull-left', width: 100, style: 'margin-right:5px;'), feed %>
         <h3 class=''><%= link_to feed.title, feed %></h3>
 
+        <% if user_signed_in? %>
+              <% if current_user.try(:admin?) %>
         <%= link_to 'Edit', edit_feed_path(feed) %>
         <%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        <% end %>
         <hr/>
       <div>
       <br/>

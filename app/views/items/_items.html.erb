@@ -1,13 +1,10 @@
     <% @items.each do |item| %>
-
     	<%= link_to image_tag(item.feed.image, class: 'img-thumbnail pull-left', width: 100, style: 'margin-right:5px;'), item %>
-        <h3><%= link_to item.title, item %>
+        <h3 class=''><%= link_to truncate(item.title, length: 30), item %>
         <br>
         <small><%= link_to item.feed.title, item.feed %></small>
         </h3>
-
-		  <strong>Plays:</strong>
-		  <%= item.plays %>
+		  <label class="label label-success"><%= pluralize(item.plays, 'plays') %></label>
 
 
 
