@@ -65,10 +65,10 @@ class FeedsController < ApplicationController
     @feed.description = @rss.channel.description
     @feed.author = @rss.channel.itunes_author
     @feed.language = @rss.channel.language
-    unless @rss.channel.blank?
+    unless @rss.channel.image.blank?
       @feed.image = @rss.channel.image.url
-    elsif @rss.itunes_image != nil
-      @feed.image = @rss.itunes_image.href
+    else @rss.channel.itunes_image != nil
+      @feed.image = @rss.channel.itunes_image.href
     end 
     # @feed.keywords = @rss.channel.keywords
     unless @rss.channel.itunes_owner.blank?
