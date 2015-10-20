@@ -1,0 +1,17 @@
+    <% @items.each do |item| %>
+
+    	<%= link_to image_tag(item.feed.image, class: 'img-thumbnail pull-left', width: 100, style: 'margin-right:5px;'), item %>
+        <h3><%= link_to item.title, item %>
+        <br>
+        <small><%= link_to item.feed.title, item.feed %></small>
+        </h3>
+
+		  <strong>Plays:</strong>
+		  <%= item.plays %>
+
+
+
+       
+
+        <hr/>
+    <% end %>

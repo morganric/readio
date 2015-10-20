@@ -8,6 +8,11 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jplayer-rails'
 gem 'kaminari'
+gem 'therubyracer'
+# twitter bootstrap css & javascript toolkit
+gem 'twitter-bootswatch-rails', '~> 3.3.4'
+# twitter bootstrap helpers gem, e.g., alerts etc...
+gem 'twitter-bootswatch-rails-helpers'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

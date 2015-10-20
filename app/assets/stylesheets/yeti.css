@@ -1,0 +1,191 @@
+/* Yeti
+ * Bootswatch
+ *= require_self
+ *= require yeti/loader
+ *= require yeti/bootswatch
+*/
+
+header {
+	margin-bottom: 60px;
+}
+
+.jp-flat-audio {
+  position: relative;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: left;
+
+  min-width:320px;
+  max-width:1280px;
+  width: 100%;
+  height: 64px;
+
+  /* Hide iOS touch highlight */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  /* Disable selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* define your text color here */
+  color: #ffffff;
+}
+
+.jp-flat-audio,
+.jp-flat-audio * {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 0;
+  line-height: 0;
+}
+
+.jp-flat-audio *:focus {
+  /* Disable the browser focus highlighting. */
+  outline:none;
+}
+.jp-flat-audio button::-moz-focus-inner {
+  /* Disable the browser CSS3 focus highlighting. */
+  border: 0;
+}
+
+.jp-flat-audio .jp-control {
+  position: absolute;
+  top: 0;
+  width: 64px;
+  height: 100%;
+
+  /* define your pause/play button background color here */
+  background-color: #009be3;
+}
+
+.jp-flat-audio .jp-play-control {
+  left: 0;
+}
+
+.jp-flat-audio .jp-button {
+  display:block;
+  text-decoration: none;
+
+  width: 64px;
+  height: 100%;
+  font-size: 32px;
+  line-height: 64px;
+
+  text-align: center;
+  background: none;
+  cursor: pointer;
+
+  /* define your pause/play button icon color here */
+  color: #ffffff;
+}
+.jp-flat-audio .jp-button:focus {
+  /* define your pause/play button in focus icon color here */
+  color: #e5f7ff;
+}
+
+.jp-flat-audio .jp-button:before {
+  display: block;
+
+  font-family: 'flat-audio';
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+
+  width: 64px;
+  line-height: 64px;
+
+  text-align: center;
+  opacity: 1.0;
+}
+
+.jp-flat-audio.jp-state-playing .jp-play:before {
+  content: '\2016';
+}
+.jp-flat-audio .jp-play:before {
+  content: '\25b6';
+}
+
+.jp-flat-audio .jp-bar {
+  position: absolute;
+  top: 0;
+  left: 64px;
+  right: 0;
+  height: 100%;
+
+  /* define your unseekable progress bar background color here - only noticeable with the flash solution as it downloads */
+  background-color: #000000;
+}
+.jp-flat-audio .jp-seek-bar.jp-seek-bar-display {
+  min-width: 0;
+
+  /* define your unplayed progress bar background color here */
+  background-color: #232323;
+}
+.jp-flat-audio .jp-seek-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100%;
+
+  cursor: pointer;
+}
+
+.jp-flat-audio .jp-play-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+
+  /* define your played progress bar background color here */
+  background-color: #0082b2;
+}
+
+.jp-flat-audio .jp-details,
+.jp-flat-audio .jp-timing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  padding: 0 12px;
+
+  font-size: 16px;
+  line-height: 64px;
+}
+.jp-flat-audio .jp-timing {
+  text-align: right;
+}
+.jp-flat-audio .jp-title,
+.jp-flat-audio .jp-duration {
+  font-size: 16px;
+  line-height: 64px;
+}
+
+.jp-flat-audio .jp-no-solution {
+  position: absolute;
+  top: 0;
+  left: 64px;
+  right: 0;
+  height: 48px; /* 64px - 8px - 8px = 48px */
+  padding: 8px 0;
+
+  line-height: 24px;
+  font-size: 16px;
+  text-align: center;
+  display: none;
+
+  /* define your error message text color here */
+  color: #000000;
+
+  /* define your error message background color here */
+  background-color: #b28282;
+}
