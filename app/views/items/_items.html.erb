@@ -1,4 +1,16 @@
-    <% @items.each do |item| %>
+    <% @items.each_with_index do |item, index| %>
+
+<% if params[:page].nil? || params[:page] == "0" || params[:page] == "1" %>
+    <% x = 0 %>
+  <% else %>
+    <% page = params[:page].to_i - 1 %>
+    <% x = page * 10 %>
+<% end %>
+
+      <span class="pull-right">
+      <h2><%= index+x+1 %></h2>
+    </span>
+
     	<%= link_to image_tag(item.feed.image, class: 'img-thumbnail pull-left', width: 100, style: 'margin-right:5px;'), item %>
         <h3 class=''><%= link_to truncate(item.title, length: 30), item %>
         <br>

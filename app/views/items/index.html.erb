@@ -1,5 +1,7 @@
 
-<h1 class="text-center">Readio<br/>
+<h1 class="text-center">
+
+<%= image_tag("readioapp.png", :height => "50") %> Readio<br/>
 <small>
 	Talk. Radio. Podcasts.
 </small>
@@ -18,11 +20,20 @@
 
 </div>
 
-<div class="col-md-4">
+<div class="col-md-4 pull-right">
 
-<% @featured.each do |item| %>
-	<%= item.title %>
-<% end %>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Featured</h3>
+  </div>
+  <div class="panel-body">
+    <% @featured.limit(6).each do |item| %>
+		
+		<h4><a href="<%= item_path(item) %>"><i class="glyphicon glyphicon-star"></i> <%= item.title %></a></h4>
+	<% end %>
+  </div>
+</div>
+
 </div>
 
 </div>

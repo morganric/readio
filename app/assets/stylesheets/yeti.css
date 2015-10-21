@@ -13,6 +13,9 @@ h3 {
 	margin-top: 4px !important;
 }
 
+ul li {
+  list-style: none;
+}
 
 .one {
 margin-top:10px;

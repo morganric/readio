@@ -43,8 +43,9 @@
 
 
       <% @items.each do |item| %>
-         <li class="list-group-item"> <%= link_to item.title, item %> 
-         
+         <li class="list-group-item"> 
+            <h5><label class='label label-success pull-right'><i class="glyphicon glyphicon-play" ></i> <%= pluralize(item.plays, 'play') %></label></h5>
+        <h4><%= link_to truncate(item.title, length: 50), item %> </h4>
          </li>
       <% end %>
 
