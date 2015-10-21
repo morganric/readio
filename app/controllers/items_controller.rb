@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :plays, :edit, :update, :destroy]
-  before_action :admin_only, :only => [:new, :create, :edit, :update]
+  before_action :admin_only, :only => [:new, :create, :edit, :update, :destroy]
 
   include ApplicationHelper
 
