@@ -20,7 +20,9 @@
 
 <div class="col-md-4">
 
-
+<% @featured.each do |item| %>
+	<%= item.title %>
+<% end %>
 </div>
 
 </div>

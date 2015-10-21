@@ -13,6 +13,7 @@ gem 'therubyracer'
 gem 'twitter-bootswatch-rails', '~> 3.3.4'
 # twitter bootstrap helpers gem, e.g., alerts etc...
 gem 'twitter-bootswatch-rails-helpers'
+gem 'whenever', require: false
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

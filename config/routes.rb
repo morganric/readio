@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :feeds
 
   get '/latest' => 'items#latest', as: :latest
+   get '/fresh' => 'items#fresh', as: :fresh
+    get '/featured' => 'items#featured', as: :featured
 
   get '/items/:id/play' => 'items#plays', as: :item_play
 

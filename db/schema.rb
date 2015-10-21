@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151018191746) do
+ActiveRecord::Schema.define(version: 20151021160948) do
 
   create_table "feeds", force: :cascade do |t|
     t.string   "url"
@@ -44,9 +44,10 @@ ActiveRecord::Schema.define(version: 20151018191746) do
     t.string   "image"
     t.string   "slug"
     t.integer  "feed_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "plays",       default: 0
+    t.boolean  "featured",    default: false
   end
 
   create_table "users", force: :cascade do |t|

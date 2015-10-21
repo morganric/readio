@@ -1,8 +1,10 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
+  before_action :admin_only, :only => [:new, :create, :edit, :update]
+
 
   require 'rss'
-  include FeedsHelper
+  include ApplicationHelper
 
   # GET /feeds
   # GET /feeds.json
@@ -96,6 +98,13 @@ class FeedsController < ApplicationController
   end
 
   private
+
+
+  def admin_only
+    unless current_user && current_user.admin?
+      redirect_to root_path, :alert => "Access denied."
+    end
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_feed
       @feed = Feed.find(params[:id])

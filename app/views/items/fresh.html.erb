@@ -1,0 +1,29 @@
+<h1 class="text-center">Readio
+<br/>
+<small>
+	Latest Podcasts
+</small>
+</h1>
+
+
+<div class='col-md-12'>
+<ul class="nav nav-tabs ">
+  <li ><a href="<%= root_path() %>">Popular</a></li>
+  <li ><a href="<%= latest_path %>">Latest</a></li>
+</ul>
+<br/>
+
+<div class="col-md-8 row">
+
+<% unless @fresh.blank? %>
+<%= render 'items', :items => @fresh %>
+
+    <%= paginate @fresh %>
+ <% else %>
+ Nothing new :(
+ <% end %>
+</div>
+<div class='col-md-4'>
+
+</div>
+</div>
