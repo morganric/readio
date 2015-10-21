@@ -42,19 +42,22 @@
           </div>
         </div>
         <br/>
-
-<p class="well">
-  <%= strip_tags(@item.description) %>
-</p>
-
-
-  <label class='label label-info'><%= pluralize(@item.plays, 'play') %>
+          <label class='label label-success'><i class="glyphicon glyphicon-play" ></i> <%= pluralize(@item.plays, 'play') %>
 </label>
 <br/><br/>
-<p>
+
+
+<div class="well">
+  <%= strip_tags(@item.description) %>
+  <br/>
+  <br/>
   <strong>Published on:</strong>
   <%= @item.pub_date %>
-</p>
+
+
+</div>
+
+
 
 
 

@@ -1,9 +1,20 @@
 
-<h1 class="text-center">Latest</h1>
-<hr/>
+<h1 class="text-center">Readio
+<br/>
+<small>
+	Latest Podcasts
+</small>
+</h1>
+
 
 <div class='col-md-12'>
-<div class="col-md-8">
+<ul class="nav nav-tabs ">
+  <li ><a href="<%= root_path() %>">Popular</a></li>
+  <li class="active"><a href="#">Latest</a></li>
+</ul>
+<br/>
+
+<div class="col-md-8 row">
 
 <%= render 'items' %>
 

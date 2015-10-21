@@ -1,16 +1,25 @@
 
-<h1 class="text-center">Readio</h1>
-<hr/>
+<h1 class="text-center">Readio<br/>
+<small>
+	Talk. Radio. Podcasts.
+</small>
+</h1>
+
 
 <div class="col-md-12">
-
-<div class="col-md-8">
+	<ul class="nav nav-tabs ">
+	  <li class="active"><a href="<%= root_path() %>">Popular</a></li>
+	  <li ><a href="<%= latest_path %>">Latest</a></li>
+	</ul>
+	<br/>
+<div class="col-md-8 row">
 
 <%= render 'items' %>
 
 </div>
 
 <div class="col-md-4">
+
 
 </div>
 

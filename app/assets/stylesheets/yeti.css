@@ -13,6 +13,74 @@ h3 {
 	margin-top: 4px !important;
 }
 
+
+.one {
+margin-top:10px;
+height: 2px;
+width: 5px;
+background-color: #fff;
+border-radius: 2px;
+margin-bottom: 2px;
+}
+
+
+.two {
+
+height: 2px;
+width: 15px;
+background-color: #fff;
+border-radius: 2px;
+margin-bottom: 2px;
+
+}
+
+
+.three {
+
+height: 2px;
+width: 25px;
+background-color: #fff;
+border-radius: 2px;
+margin-bottom: 2px;
+}
+
+.four {
+
+height: 2px;
+width: 35px;
+background-color: #fff;
+border-radius: 2px;
+margin-bottom: 2px;
+}
+
+
+.five {
+
+height: 2px;
+width: 25px;
+background-color: #fff;
+border-radius: 2px;
+margin-bottom: 2px;
+}
+
+.six {
+
+height: 2px;
+width: 15px;
+background-color: #fff;
+border-radius: 2px;
+margin-bottom: 2px;
+}
+
+.seven {
+
+height: 2px;
+width: 5px;
+background-color: #fff;
+border-radius: 2px;
+margin-bottom: 2px;
+}
+
 .jp-flat-audio {
   position: relative;
   font-family: 'Source Sans Pro', sans-serif;
@@ -63,7 +131,7 @@ h3 {
   height: 100%;
 
   /* define your pause/play button background color here */
-  background-color: #009be3;
+  background-color: #008cba;
 }
 
 .jp-flat-audio .jp-play-control {
