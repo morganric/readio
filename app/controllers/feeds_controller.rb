@@ -18,7 +18,7 @@ class FeedsController < ApplicationController
 
     update_feed(@feed)
 
-      @items = @feed.items.page params[:page]
+    @items = @feed.items.order('pub_date DESC').page params[:page]
 
   end
 
@@ -46,10 +46,12 @@ class FeedsController < ApplicationController
     @feed.description = @rss.channel.description
     @feed.author = @rss.channel.itunes_author
     @feed.language = @rss.channel.language
-    unless @rss.channel.image.blank?
-      @feed.image = @rss.channel.image.url
-    else @rss.channel.itunes_image != nil
+
+  
+    if @rss.channel.itunes_image != nil
       @feed.image = @rss.channel.itunes_image.href
+    else @rss.channel.image != nil
+      @feed.image = @rss.channel.image.url
     end 
     # @feed.keywords = @rss.channel.keywords
     unless @rss.channel.itunes_owner.blank?
