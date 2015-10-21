@@ -1,6 +1,7 @@
 <%# add navigation links to this file %>
 
- <li><%= link_to 'Featured', featured_path %></li>
+ <li><a href="<%= featured_path %>"><i class="glyphicon glyphicon-star"></i> Featured</a></li>
+   <li><a href="<%= feeds_path %>"><i class="glyphicon glyphicon-th"></i> Feeds</a></li>
 <% if user_signed_in? %>
   <li><%= link_to 'Edit account', edit_user_registration_path %></li>
   <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>

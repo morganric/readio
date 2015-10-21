@@ -1,11 +1,11 @@
 
 <h1 class="text-center">Listing Feeds</h1>
 <br/>
-<div>
+<div class=" col-md-12 ">
     <% @feeds.each do |feed| %>
-    	<div>
-        <%= link_to image_tag(feed.image, class: 'img-thumbnail pull-left', width: 100, style: 'margin-right:5px;'), feed %>
-        <h3 class=''><%= link_to feed.title, feed %></h3>
+      <div class="col-md-2">
+        <%= link_to image_tag(feed.image, class: 'img-thumbnail ', width: 200, style: 'margin-right:5px;'), feed %>
+        <h5 class=''><%= link_to feed.title, feed %></h5>
 
         <% if user_signed_in? %>
               <% if current_user.try(:admin?) %>
@@ -13,9 +13,7 @@
         <%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
         <% end %>
-        <hr/>
-      <div>
-      <br/>
+        </div>
     <% end %>
 
 </div>

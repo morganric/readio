@@ -9,7 +9,7 @@ class FeedsController < ApplicationController
   # GET /feeds
   # GET /feeds.json
   def index
-    @feeds = Feed.all
+    @feeds = Feed.all.order('pub_date ASC')
   end
 
   # GET /feeds/1
