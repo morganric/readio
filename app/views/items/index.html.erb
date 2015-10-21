@@ -22,17 +22,17 @@
 
 <div class="col-md-4 pull-right">
 
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h3 class="panel-title">Featured</h3>
-  </div>
-  <div class="panel-body">
-    <% @featured.limit(6).each do |item| %>
-		
-		<h4><a href="<%= item_path(item) %>"><i class="glyphicon glyphicon-star"></i> <%= item.title %></a></h4>
-	<% end %>
-  </div>
-</div>
+	<div class="panel panel-info">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Featured</h3>
+	  </div>
+	  <div class="panel-body">
+	    <% @featured.limit(6).each do |item| %>
+			
+			<h4><a href="<%= item_path(item) %>"><i class="glyphicon glyphicon-star"></i> <%= truncate(item.title, length: 30) %></a></h4>
+		<% end %>
+	  </div>
+	</div>
 
 </div>
 
