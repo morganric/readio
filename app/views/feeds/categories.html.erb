@@ -5,7 +5,7 @@
 	<div class="col-md-3">
 	<h3><%= link_to category.titleize, category_path(category: category) %></h3>
 	<%= link_to image_tag(@feeds.where(:category => category).first.image, :class => "img-thumbnail", width:300), @feeds.where(:category => category).first %>
-	<h4><%= link_to @feeds.where(:category => category).first.items.first.title, @feeds.where(:category => category).first.items.first  %></h4>
+	<h4><%= link_to truncate(@feeds.where(:category => category).first.items.first.title, length: 30), @feeds.where(:category => category).first.items.first  %></h4>
 	</div>
 <% end %>
 </div>
