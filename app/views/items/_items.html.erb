@@ -17,8 +17,9 @@
         <small><%= link_to item.feed.title, item.feed %></small>
         </h3>
 		  <label class="label label-success"><%= pluralize(item.plays, 'plays') %></label>
+          <% unless item.feed.category.blank? %>
            <label class="label label-info"><%= link_to item.feed.category.titleize, category_path(:category => item.feed.category.titleize) %></label>
-
+           <% end %>
 
 
        
