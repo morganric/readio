@@ -12,6 +12,38 @@ class FeedsController < ApplicationController
     @feeds = Feed.all.order('pub_date ASC')
   end
 
+  def categories
+    @categories = []
+
+    @feeds =  Feed.all
+
+   @feeds.each do |feed|
+
+      if feed.try(:category)
+        @categories << feed.category
+      end
+    end
+
+    @categories = @categories.uniq
+
+  end
+
+
+  def category
+    @category = params[:category]
+    @feeds = Feed.all.where(:category => @category)
+
+    @items = []
+
+    @feeds.each do |feed|
+      @items << feed.items[0]
+    end
+
+    @featured = Item.where(:featured => true).order('created_at DESC')
+
+  end
+
+
   # GET /feeds/1
   # GET /feeds/1.json
   def show

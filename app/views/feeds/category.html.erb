@@ -1,0 +1,41 @@
+
+<h1 class="text-center">
+
+<%= image_tag("readioapp.png", :height => "50") %> Readio<br/>
+<small>
+	<%= params[:category].titleize %>
+</small>
+</h1>
+
+
+<div class="col-md-12">
+	<ul class="nav nav-tabs ">
+	  <li class="active"><a href="<%= root_path() %>">Popular</a></li>
+	  <li ><a href="<%= latest_path %>">Latest</a></li>
+	</ul>
+	<br/>
+<div class="col-md-8 row">
+
+<%= render 'items' %>
+
+</div>
+
+<div class="col-md-4 pull-right">
+
+	<div class="panel panel-info">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Featured</h3>
+	  </div>
+	  <div class="panel-body">
+	    <% @featured.limit(6).each do |item| %>
+			
+			<h4><a href="<%= item_path(item) %>"><i class="glyphicon glyphicon-star"></i> <%= truncate(item.title, length: 30) %></a></h4>
+		<% end %>
+	  </div>
+	</div>
+
+</div>
+
+</div>
+
+    <%#= paginate @items %>
